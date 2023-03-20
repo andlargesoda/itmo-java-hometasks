@@ -1,6 +1,6 @@
 package homework01;
 
-public class Tasks4 {
+public class Task04 {
     public static void main(String[] args) {
         int number = 11;
         int unit = number % 10;

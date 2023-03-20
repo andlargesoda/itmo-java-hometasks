@@ -1,6 +1,6 @@
 package homework01;
 
-public class Tasks1 {
+public class Task01 {
     public static void main(String[] args) {
         int length = 5, width = 8;
         int square = length * width;
