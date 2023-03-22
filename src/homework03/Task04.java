@@ -32,10 +32,10 @@ public class Task04 {
                     int answer01 = in.nextInt();
                     switch (answer01) {
                         case 1:
-                            lowLimitRange = middleRange;
+                            lowLimitRange = middleRange + 1;
                             break;
                         case 0:
-                            highLimitRange = middleRange;
+                            highLimitRange = middleRange - 1;
                             break;
                     }
                     break;
