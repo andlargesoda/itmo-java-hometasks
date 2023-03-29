@@ -2,15 +2,25 @@ package ru.itmo.homeworks.homework6.hikes;
 
 public class Group {
     private Mountain mountain;
-    private Climber[] climbers = new Climber[5];
+    private Climber[] climbers;
+    private int index;
     private boolean isOpen;
-
-    public void addClimber01(Climber[] climbers, boolean isOpen) { // при вызове данного метода в Application в () необходимо указать массив альпинистов, открытость набора в группу)
-        if (isOpen) {
-            System.out.println("Набор в группу еще есть");
-            for (int i = 0; i < climbers.length; i++) {
-                this.climbers = climbers; // на значение, указанное при вызове данного метода будет i - элемент массива
-            }
+    public Group(Mountain mountain, boolean isOpen) {
+        this.mountain = mountain;
+        this.isOpen = isOpen;
+        climbers = new Climber[5];
+    }
+    public void addClimber(Climber climber) { // при вызове данного метода в Application в () необходимо указать массив альпинистов, открытость набора в группу)
+        if (isOpen == false) {
+            System.out.println("Набор в группе не ведется");
+            return;
         }
+            if (index <= 5) {
+                climbers[index] = climber;
+                index++;
+        }
+    }
+    public Climber[] getClimbers() {
+        return climbers;
     }
 }

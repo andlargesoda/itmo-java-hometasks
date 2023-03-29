@@ -4,6 +4,11 @@ public class Mountain {
     private String nameMountain;
     private String countryMountain;
     private int heightMountain;
+    public Mountain(String nameMountain, String countryMountain, int heightMountain) {
+        setNameMountain(nameMountain);
+        setCountryMountain(countryMountain);
+        setHeightMountain(heightMountain);
+    }
     public void setNameMountain(String NameMountain) {
         if (NameMountain == null || NameMountain.length() < 4) {
             throw new IllegalArgumentException("nameclimber не менее 4-х символов");
