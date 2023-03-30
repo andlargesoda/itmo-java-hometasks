@@ -19,17 +19,17 @@ public class Application {
         Mountain mountain02 = new Mountain("Everest", "Nepal, China", 8848);
         Mountain mountain03 = new Mountain("Aconcagua", "Argentina", 6960);
 
-        Group group01 = new Group(mountain01, false);
-        group01.addClimber(climber01);
-        group01.addClimber(climber02);
-        group01.addClimber(climber03);
-        Group group02 = new Group(mountain02, true);
-        group02.addClimber(climber04);
-        group02.addClimber(climber05);
-        Group group03 = new Group(mountain03, true);
-        group03.addClimber(climber06);
-        group03.addClimber(climber07);
+        Group group01 = new Group(mountain01);
+        group01.addClimber(climber01, true);
+        group01.addClimber(climber02, true);
+        group01.addClimber(climber03, true);
+        Group group02 = new Group(mountain02);
+        group02.addClimber(climber04, true);
+        group02.addClimber(climber05, true);
+        Group group03 = new Group(mountain03);
+        group03.addClimber(climber06, true);
+        group03.addClimber(climber07, true);
 
-        group01.getClimbers();
+       group02.printClimbers();
     }
 }

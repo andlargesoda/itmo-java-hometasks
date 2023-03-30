@@ -22,6 +22,7 @@ public class Task02 {
                 i++;
             }
         }
+
         Arrays.sort(arrays01, Collections.reverseOrder());
         System.out.println(Arrays.toString(arrays01));
     }

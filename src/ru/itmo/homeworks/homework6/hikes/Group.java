@@ -1,16 +1,18 @@
 package ru.itmo.homeworks.homework6.hikes;
 
+import java.util.Arrays;
+
 public class Group {
     private Mountain mountain;
     private Climber[] climbers;
     private int index;
     private boolean isOpen;
-    public Group(Mountain mountain, boolean isOpen) {
+    public Group(Mountain mountain) {
         this.mountain = mountain;
         this.isOpen = isOpen;
         climbers = new Climber[5];
     }
-    public void addClimber(Climber climber) { // при вызове данного метода в Application в () необходимо указать массив альпинистов, открытость набора в группу)
+    public void addClimber(Climber climber, boolean isOpen) { // при вызове данного метода в Application в () необходимо указать массив альпинистов, открытость набора в группу)
         if (isOpen == false) {
             System.out.println("Набор в группе не ведется");
             return;
@@ -20,7 +22,8 @@ public class Group {
                 index++;
         }
     }
-    public Climber[] getClimbers() {
-        return climbers;
+    public void printClimbers() {
+        System.out.println(Arrays.toString(climbers));
+        };
+       // return climbers;
     }
-}

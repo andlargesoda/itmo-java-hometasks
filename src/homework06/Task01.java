@@ -19,6 +19,7 @@ public class Task01 {
         }
         System.out.println("Сгенирированный массив, отсортированный в порядке возрастание:");
         Arrays.sort(arrays01);
+        System.out.println(arrays01);
         System.out.println(Arrays.toString(arrays01));
         System.out.println("Максимальный элемент массива:");
         System.out.println(arrays01[0]);
