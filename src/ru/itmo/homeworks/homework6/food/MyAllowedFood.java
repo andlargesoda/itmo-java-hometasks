@@ -107,7 +107,7 @@ public class MyAllowedFood {
         }
     }
     public Food[] getFoods() {
-        Arrays.toString(foods);
+        System.out.println(Arrays.toString(foods));
         return foods;
     }
 }

@@ -6,7 +6,7 @@ public class Food {
     // объявляем свойства
 
     // название продукта
-    public String nameFood;
+    private String nameFood;
 
     // кол-во белков
     public int protein;
@@ -76,9 +76,5 @@ public class Food {
             throw new IllegalArgumentException("Exception: calorie  <= 0");
         }
         this.calorie = calorie;
-    }
-
-    public String getNameFood() {
-        return nameFood;
     }
 }

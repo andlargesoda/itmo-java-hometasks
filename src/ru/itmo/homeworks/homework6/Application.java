@@ -29,7 +29,5 @@ public class Application {
         Group group03 = new Group(mountain03);
         group03.addClimber(climber06, true);
         group03.addClimber(climber07, true);
-
-       group02.printClimbers();
     }
 }

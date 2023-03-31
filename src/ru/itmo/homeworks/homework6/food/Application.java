@@ -4,7 +4,6 @@ import ru.itmo.homeworks.homework6.food.Food;
 import ru.itmo.homeworks.homework6.food.MyAllowedFood;
 
 import java.util.Arrays;
-import java.util.stream.Stream;
 
 public class Application {
     public static void main(String[] args) {
@@ -43,6 +42,6 @@ public class Application {
         myAllowedFood.addAllowedFood(food03);
         myAllowedFood.addAllowedFood(food04);
 
-        myAllowedFood.printFood();
+        myAllowedFood.getFoods();
     }
 }
