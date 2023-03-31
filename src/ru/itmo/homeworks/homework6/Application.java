@@ -20,14 +20,21 @@ public class Application {
         Mountain mountain03 = new Mountain("Aconcagua", "Argentina", 6960);
 
         Group group01 = new Group(mountain01);
-        group01.addClimber(climber01, true);
-        group01.addClimber(climber02, true);
-        group01.addClimber(climber03, true);
+        group01.addClimber(climber01);
+        group01.addClimber(climber02);
+        group01.addClimber(climber03);
+        group01.setIsOpen(false);
+        group01.addClimber(climber04);
+        group01.printClimbers();
+
         Group group02 = new Group(mountain02);
-        group02.addClimber(climber04, true);
-        group02.addClimber(climber05, true);
+        group02.addClimber(climber05);
+        group02.addClimber(climber06);
+        group02.printClimbers();
+
         Group group03 = new Group(mountain03);
-        group03.addClimber(climber06, true);
-        group03.addClimber(climber07, true);
+        group03.addClimber(climber07);
+        group03.addClimber(climber08);
+        group03.printClimbers();
     }
 }

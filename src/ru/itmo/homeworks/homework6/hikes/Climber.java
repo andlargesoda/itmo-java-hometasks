@@ -19,4 +19,7 @@ public class Climber {
         }
         this.addressClimber = addressClimber;
     }
+    public String getNameClimber() {
+        return nameClimber;
+    }
 }

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MyAllowedFood {
 
-    // объявляем свойства
+// объявляем свойства
 
     // список (массив) продуктов
     private Food[] foods;
@@ -24,6 +24,7 @@ public class MyAllowedFood {
     // максимальное кол-во калорий
     private int maxCalorie;
 
+    // конструктор
     public MyAllowedFood(int maxProtein, int maxFat, int maxCarbohydrate, int maxCalorie) {
         if (maxProtein <= 0) {
             throw new IllegalArgumentException("Exception: maxProtein <= 0");
@@ -44,70 +45,45 @@ public class MyAllowedFood {
         foods = new Food[4];
     }
 
-    // объявляем методы
-
     // метод проверки данных для максимального кол-ва белков
-    /*public void setMaxProteinProtein(int maxProtein) {
-        if (maxProtein  <= 0) {
-            throw new IllegalArgumentException("Exception: maxProtein <= 0");
-        }
-        this.maxProtein = maxProtein;
-    }
-
-    // метод проверки данных для максимального кол-ва жиров
-    public void setMaxFat(int maxFat) {
-        if (maxFat  <= 0) {
-            throw new IllegalArgumentException("Exception: maxFat  <= 0");
-        }
-        this.maxFat = maxFat;
-    }
-
-    // метод проверки данных для максимального кол-ва углеводов
-    public void setMaxCarbohydrate(int MaxCarbohydrate) {
-        if (MaxCarbohydrate  <= 0) {
-            throw new IllegalArgumentException("Exception: maxCarbohydrate  <= 0");
-        }
-        this.maxCarbohydrate = MaxCarbohydrate;
-    }
-    // метод проверки данных для максимального кол-ва калорий
-    public void setMaxCalorie(int maxCalorie) {
-        if (maxCalorie  <= 0) {
-            throw new IllegalArgumentException("Exception: maxCalorie  <= 0");
-        }
-        this.maxCalorie = maxCalorie;
-    }
-*/
-    // метод добавления разрешенного продукта
-    public void addAllowedFood(Food food) {
+    public void addAllowedProduct(Food food) {
         if (food == null) {
-            System.out.println("Нет продукта");
+            System.out.println("Не указан продукт");
             return;
         }
-        if (maxProtein > food.protein) {
-            System.out.println("Продукт " + " имеет низкое содержание белков");
+        if (maxProtein > food.getProtein()) {
+            System.out.println(food.getNameFood() + " имеет низкое содержание белков");
             return;
         }
-        if (maxFat < food.fat) {
-            System.out.println("Продукт " + " имеет высокое содержание жиров");
+        if (maxFat < food.getFat()) {
+            System.out.println(food.getNameFood() + " имеет высокое содержание жиров");
             return;
         }
-        if (maxCarbohydrate < food.carbohydrate) {
-            System.out.println("Продукт " + " имеет высокое содержание углеводов");
+        if (maxCarbohydrate < food.getCarbohydrate()) {
+            System.out.println(food.getNameFood() + " имеет высокое содержание углеводов");
             return;
         }
-        if (maxCalorie < food.calorie) {
-            System.out.println("Продукт " + " имеет Высокое содержание калорий");
+        if (maxCalorie < food.getCalorie()) {
+            System.out.println(food.getNameFood() + " имеет высокое содержание калорий");
             return;
         }
-        if (indexFood < 5) {
-            foods[indexFood] = food;
-            indexFood++;
-        } else {
+        if (foods.length == indexFood) {
             System.out.println("Список продуктов заполнен");
+            return;
         }
+        foods[indexFood] = food;
+        indexFood++;
+        System.out.println(food.getNameFood() + " добавлен в список продуктов");
     }
-    public Food[] getFoods() {
-        System.out.println(Arrays.toString(foods));
-        return foods;
+
+    // метод вывода списка продуктов
+    public void printFood() {
+        System.out.println("Список продуктов:");
+        for (Food food : foods) {
+            if (food == null) {
+                return;
+            }
+            System.out.println(food.getNameFood());
+        }
     }
 }
