@@ -25,7 +25,10 @@ public class Service {
         }
     }
     // метод ремонта транспортных средств массива
-    public void fixTransport(Transport transport) {
+    public void fixTransport() {
+        String[] colors = {"черный", "серый", "белый"};
         transports[indexTransport].fixDamageLevel();
+        transports[indexTransport] instanceof Paint ? ((Paint) transports[indexTransport]).changeColor(colors[(int) Math.random()*colors.length])) : null;
+        indexTransport++;
     }
 }
