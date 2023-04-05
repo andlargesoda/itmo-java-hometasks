@@ -17,7 +17,7 @@ public class Bus extends Transport{
     public void setDamageLevel(int damageLevel) { // 1.	уровень износа (изначально 0), поэтому необходим сеттер уровня износа
         super.setDamageLevel(damageLevel);
     }
-
+    @Override
     public int getDamageLevel() {
         return damageLevel;
     }

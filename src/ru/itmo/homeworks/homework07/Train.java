@@ -38,4 +38,8 @@ public class Train extends Transport {
     public String getColor() {
         return color;
     }
+    @Override
+    public int getDamageLevel() {
+        return damageLevel;
+    }
 }
