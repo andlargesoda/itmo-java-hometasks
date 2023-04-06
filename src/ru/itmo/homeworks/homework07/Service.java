@@ -4,22 +4,41 @@ import java.awt.*;
 
 public class Service {
     private Transport[] transports;
-    private String[] colors = {"красный", "оранжевый", "красный"};
+    private String[] colors = {"белый", "серый", "синий", "красный", "черный", "оливковый", "желтый"};
     private int indexTransport;
     private int indexColor;
+
     public Service() {
         transports = new Transport[10];
     }
+
     public void addTransport(Transport transport) {
-        if (transport == null){
+        if (transport == null) {
             System.out.println("Не указан транспорт");
             return;
         }
         if (transports.length == indexTransport) {
             System.out.println("Мастерская заполнена");
+            return;
         } else {
-            System.out.println(transport.getNumber() + " добавлен в мастерскую");
+            System.out.println("Транспорт № " +  transport.getNumber() + " добавлен в мастерскую. Уровень износа: " + transport.getDamageLevel());
         }
+        transports[indexTransport] = transport;
+        indexTransport++;
     }
 
+    public void printTransports() {
+        for (Transport transport : transports) {
+            System.out.println("Транспорт № " + transport.getNumber() + " отремонтирован. Уровень износа: " + transport.damageLevel);
+        }
+    }
+    public void fixTransport() {
+        indexTransport = 0;
+        transports[indexTransport].fixDamageLevel();
+        if (transports[indexTransport] instanceof Paint) {
+            ((Paint) transports[indexTransport]).paintable(colors[(int) Math.random()*colors.length]);
+            System.out.println("Транспорт № " + transports[indexTransport].damageLevel + " отремонтирован. Уровень износа: " + transports[indexTransport].getNumber());
+        }
+        indexTransport++;
+    }
 }

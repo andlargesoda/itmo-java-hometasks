@@ -38,4 +38,5 @@ public class Bus extends Transport{
     public boolean isWifiAccess() {
         return wifiAccess;
     }
+
 }

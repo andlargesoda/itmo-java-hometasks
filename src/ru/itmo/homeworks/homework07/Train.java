@@ -2,7 +2,7 @@ package ru.itmo.homeworks.homework07;
 
 public class Train extends Transport {
 
-    private String color; // все поезда должны быть одинакового цвета, перекрасить нельзя
+    private final String color; // все поезда должны быть одинакового цвета, перекрасить нельзя
     private int numberOfWagons; // Поезд должен хранить информацию о количестве вагонов
 
     public Train(int number, int numberOfWagons) { // номер (обязательное свойство), поезд не может быть создан без вагонов
