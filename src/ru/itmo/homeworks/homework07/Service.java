@@ -21,7 +21,7 @@ public class Service {
             System.out.println("Мастерская заполнена");
             return;
         } else {
-            System.out.println("Транспорт № " +  transport.getNumber() + " добавлен в мастерскую. Уровень износа: " + transport.getDamageLevel());
+            System.out.println("Транспорт № " + transport.getNumber() + " добавлен в мастерскую. Уровень износа: " + transport.getDamageLevel());
         }
         transports[indexTransport] = transport;
         indexTransport++;
@@ -32,13 +32,14 @@ public class Service {
             System.out.println("Транспорт № " + transport.getNumber() + " отремонтирован. Уровень износа: " + transport.damageLevel);
         }
     }
+
     public void fixTransport() {
-        indexTransport = 0;
-        transports[indexTransport].fixDamageLevel();
-        if (transports[indexTransport] instanceof Paint) {
-            ((Paint) transports[indexTransport]).paintable(colors[(int) Math.random()*colors.length]);
-            System.out.println("Транспорт № " + transports[indexTransport].damageLevel + " отремонтирован. Уровень износа: " + transports[indexTransport].getNumber());
+        for (indexTransport = 0; indexTransport < transports.length; indexTransport++) {
+            transports[indexTransport].fixDamageLevel();
+            if (transports[indexTransport] instanceof Paint) {
+                ((Paint) transports[indexTransport]).paintable(colors[(int) (Math.random() * colors.length)]);
+            }
+//            indexTransport++;
         }
-        indexTransport++;
     }
 }

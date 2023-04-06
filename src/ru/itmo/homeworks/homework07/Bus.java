@@ -1,7 +1,7 @@
 package ru.itmo.homeworks.homework07;
 
-public class Bus extends Transport{
-    private final String color; // изменить цвет поезда нельзя
+public class Bus extends Transport {
+    private final String color; // изменить цвет автобуса нельзя
     private boolean wifiAccess; // У автобуса должен быть флаг - наличие wifi
 
     public Bus(int number, String color) { // номер (обязательное свойство), цвета автобусов могут быть разными
@@ -37,6 +37,10 @@ public class Bus extends Transport{
 
     public boolean isWifiAccess() {
         return wifiAccess;
+    }
+
+    public String getColor() {
+        return color;
     }
 
 }
