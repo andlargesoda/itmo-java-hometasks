@@ -35,8 +35,9 @@ public class App {
         // Function для добавления к положительному числу строки " p."
         String currency = " р.";
         Function<Course, String> courseFunction = course -> course.getPrice() + currency;
-        for (Course course: courses) {
-            System.out.println(courseFunction.toString());
-        }
+        System.out.println(courses);
+
+        // PriceComparator<Course> priceComparator = new PriceComparator().thenComparing(new DurationComparator());
+        // Collections.sort(courses, priceComparator);
     }
 }

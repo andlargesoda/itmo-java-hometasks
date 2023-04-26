@@ -12,6 +12,7 @@ public class University {
     public boolean addCourse(Course course) {
         return courses.add(Objects.requireNonNull(course));
     }
+
     public boolean addCourses(List<Course> courses) {
         return this.courses.addAll(Objects.requireNonNull(courses));
     }
@@ -20,8 +21,8 @@ public class University {
         // метод увеличивает стоимость курсов (courses) на newPrice,
         // если текущая стоимость меньше currentPrice
         // использовать метод foreach коллекций
-        for (Course cours : courses) {
-            if (cours.getPrice() < currentPrice) cours.setPrice(cours.getPrice() + newPrice);
+        for (Course course : courses) {
+            if (course.getPrice() < currentPrice) course.setPrice(course.getPrice() + newPrice);
         }
     }
 
@@ -34,8 +35,8 @@ public class University {
         // метод увеличивает продолжительность курсов (courses) на 1,
         // если их стоимость больше currentPrice
         // использовать метод foreach коллекций
-        for (Course cours : courses) {
-            if (cours.getPrice() > currentPrice) cours.setDuration(cours.getDuration() + 1);
+        for (Course course : courses) {
+            if (course.getPrice() > currentPrice) course.setDuration(course.getDuration() + 1);
         }
     }
 }
